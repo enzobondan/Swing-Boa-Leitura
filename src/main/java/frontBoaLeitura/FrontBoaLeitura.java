@@ -26,40 +26,45 @@ public class FrontBoaLeitura extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        textCadastro = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         cadastroBTN = new javax.swing.JButton();
+        initMsg = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        textCadastro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textCadastroActionPerformed(evt);
-            }
-        });
-        getContentPane().add(textCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 180, 30));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 220, 60));
-
-        cadastroBTN.setText("Cadastro");
+        cadastroBTN.setText("Cliente");
         cadastroBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastroBTNActionPerformed(evt);
             }
         });
-        getContentPane().add(cadastroBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 100, 30));
+        getContentPane().add(cadastroBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 100, 40));
+
+        initMsg.setText("Bem vindo ao sistema Boa Leitura");
+        initMsg.setFocusCycleRoot(true);
+        getContentPane().add(initMsg, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 370, 60));
+
+        jButton1.setText("Livro");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 130, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCadastroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textCadastroActionPerformed
-
     private void cadastroBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroBTNActionPerformed
-        CadastroClienteForm cadastro = new CadastroClienteForm();
-        cadastro.setVisible(true);
+        CadastroClienteForm clienteCadastro = new CadastroClienteForm();
+        clienteCadastro.setVisible(true);
     }//GEN-LAST:event_cadastroBTNActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        CadastroLivroForm livroCadastro = new CadastroLivroForm();
+        livroCadastro.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -98,7 +103,7 @@ public class FrontBoaLeitura extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cadastroBTN;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField textCadastro;
+    private javax.swing.JLabel initMsg;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
