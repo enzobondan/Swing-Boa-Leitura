@@ -10,7 +10,7 @@ public class ConnDB {
     public static Connection getConnection() {
         if (con == null) {
             try {
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/boaleiturabd", "Enzo", "Enzo!22");
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/boaleiturabd", "", "");
                 System.out.println("Connected to the database successfully");
             } catch (SQLException e) {
                 System.out.println("Error connecting to the database: " + e.getMessage());
