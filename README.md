@@ -1,0 +1,16 @@
+<h1 align="center">📚 Livraria Boa Leitura - Com Swing </h1>
+<h3 align="center">Relatório Avaliação Prática II Algoritmos 3</h3>
+
+
+
+### 📝 Descrição do Projeto
+Esse sistema de gerenciamento é uma aplicação abrangente e eficiente criada para facilitar as operações de uma livraria fictícia, garantindo um controle preciso do estoque, atendimento ao cliente e 
+administração interna. Desenvolvido com base em conceitos de programação orientada a objetos, o sistema oferece o cadastro de clientes e livros nesta livraria.
+
+## ✔️ Tecnologias Utilizadas
+- ``Java``
+- ``MySQL``
+
+## 🧑‍💻 Autores
+| [<img loading="lazy" src="https://avatars.githubusercontent.com/u/69803631?v=4" width=115><br><sub>Enzo Bondan de Lima</sub>](https://github.com/enzobondan) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/97066868?v=4" width=115><br><sub>Asafe Belo Borges</sub>](https://github.com/asafebelo) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/145792879?v=4" width=115><br><sub>Carlos Eduardo Rehbein</sub>](https://github.com/cadurehbein) |
+| :---: | :---: | :---: |
