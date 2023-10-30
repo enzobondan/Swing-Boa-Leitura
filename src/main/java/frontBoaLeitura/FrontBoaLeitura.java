@@ -9,12 +9,12 @@ package frontBoaLeitura;
  * @author enzob
  */
 public class FrontBoaLeitura extends javax.swing.JFrame {
-
     /**
      * Creates new form FrontBoaLeitura
      */
     public FrontBoaLeitura() {
         initComponents();
+        
     }
 
     /**
@@ -31,6 +31,8 @@ public class FrontBoaLeitura extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(460, 240));
+        setPreferredSize(new java.awt.Dimension(460, 240));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cadastroBTN.setText("Cliente");
@@ -39,11 +41,11 @@ public class FrontBoaLeitura extends javax.swing.JFrame {
                 cadastroBTNActionPerformed(evt);
             }
         });
-        getContentPane().add(cadastroBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 100, 40));
+        getContentPane().add(cadastroBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 90, 40));
 
-        initMsg.setText("Bem vindo ao sistema Boa Leitura");
+        initMsg.setText("Bem vindo ao sistema Boa Leitura, qual das abas deseja acessar?");
         initMsg.setFocusCycleRoot(true);
-        getContentPane().add(initMsg, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 370, 60));
+        getContentPane().add(initMsg, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 410, 60));
 
         jButton1.setText("Livro");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -51,7 +53,7 @@ public class FrontBoaLeitura extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 130, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 90, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -1,7 +1,12 @@
-J:\VS CODE\alg3\AP2\src\main\java\br\ufmt\ic\alg3\ap2\dao\impl\AlunoDaoImpl.java
+J:\VS CODE\alg3\AP2\src\main\java\entityClasses\ClasseLivro.java
+J:\VS CODE\alg3\AP2\src\main\java\frontBoaLeitura\CadastroLivro.java
+J:\VS CODE\alg3\AP2\src\main\java\br\ufmt\ic\alg3\ap2\dao\impl\LivroDaoImpl.java
+J:\VS CODE\alg3\AP2\src\main\java\entityClasses\ClasseCliente.java
+J:\VS CODE\alg3\AP2\src\main\java\frontBoaLeitura\CadastroCliente.java
 J:\VS CODE\alg3\AP2\src\main\java\frontBoaLeitura\FrontBoaLeitura.java
-J:\VS CODE\alg3\AP2\src\main\java\br\ufmt\ic\alg3\ap2\model\Aluno.java
+J:\VS CODE\alg3\AP2\src\main\java\database\Clientlist.java
+J:\VS CODE\alg3\AP2\src\main\java\br\ufmt\ic\alg3\ap2\dao\impl\ClienteDaoImpl.java
+J:\VS CODE\alg3\AP2\src\main\java\frontBoaLeitura\CadastroLivroForm.java
 J:\VS CODE\alg3\AP2\src\main\java\br\ufmt\ic\alg3\ap2\dao\DAO.java
-J:\VS CODE\alg3\AP2\src\main\java\br\ufmt\ic\alg3\ap2\AP2.java
 J:\VS CODE\alg3\AP2\src\main\java\frontBoaLeitura\CadastroClienteForm.java
 J:\VS CODE\alg3\AP2\src\main\java\br\ufmt\ic\alg3\ap2\util\ConnDB.java

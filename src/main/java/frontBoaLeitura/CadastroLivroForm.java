@@ -4,6 +4,12 @@
  */
 package frontBoaLeitura;
 
+import br.ufmt.ic.alg3.ap2.dao.impl.LivroDaoImpl;
+import entityClasses.ClasseLivro;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author enzob
@@ -15,8 +21,25 @@ public class CadastroLivroForm extends javax.swing.JFrame {
      */
     public CadastroLivroForm() {
         initComponents();
+        atualizarTabela();
     }
+    private void atualizarTabela() {
+           LivroDaoImpl update = new LivroDaoImpl();
+           List<ClasseLivro> livros = update.Verificar();
+           DefaultTableModel model = (DefaultTableModel) listaLivro.getModel();
+           model.setRowCount(0); // Limpa a tabela antes de atualizá-la
 
+           for (ClasseLivro livro : livros) {
+               Object[] rowData = {
+                   livro.getId(),
+                   livro.getTitle(),
+                   livro.getAutor(),
+                   livro.getEditora(),
+                   livro.getPreco()
+               };
+               model.addRow(rowData); // Adiciona uma nova linha à tabela
+           }
+       }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,46 +49,93 @@ public class CadastroLivroForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        cadastroBTN = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listaLivro = new javax.swing.JTable();
+        deleteBTN = new javax.swing.JButton();
+        AtualizarBTN = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        cadastroBTN.setText("Cadastrar");
+        cadastroBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                cadastroBTNActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 250, 220));
+        getContentPane().add(cadastroBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 40, 90, 40));
 
-        jButton1.setText("Cadastrar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        listaLivro.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Título", "Autor", "Editora", "Preço"
+            }
+        ));
+        jScrollPane1.setViewportView(listaLivro);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 500, 410));
+
+        deleteBTN.setText("Remover");
+        deleteBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                deleteBTNActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, -1));
+        getContentPane().add(deleteBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 100, 90, 40));
 
-        jButton2.setText("Remover");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, -1, -1));
-
-        jButton3.setText("Retornar");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 100, 30));
+        AtualizarBTN.setText("Atualizar");
+        AtualizarBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AtualizarBTNActionPerformed(evt);
+            }
+        });
+        getContentPane().add(AtualizarBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, 90, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void cadastroBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroBTNActionPerformed
+        CadastroLivro newLivro = new CadastroLivro();
+        newLivro.setVisible(true);
+    }//GEN-LAST:event_cadastroBTNActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
+        int selectedRow = listaLivro.getSelectedRow();
+        if (selectedRow != -1) {
+            // Exiba uma caixa de diálogo de confirmação
+            int resposta = JOptionPane.showConfirmDialog(null, "Deseja excluir o Livro selecionado?", "Confirmação de Exclusão", JOptionPane.YES_NO_OPTION);
+
+            if (resposta == JOptionPane.YES_OPTION) {
+                DefaultTableModel model = (DefaultTableModel) listaLivro.getModel();
+                int idLivroExcluir = (int) model.getValueAt(selectedRow, 0);
+
+                LivroDaoImpl deleteDB = new LivroDaoImpl();
+                boolean exclusaoBemSucedida = deleteDB.deletar(idLivroExcluir);
+
+                if (exclusaoBemSucedida) {
+                    // Remova a linha da tabela se a exclusão no banco de dados for bem-sucedida
+                    model.removeRow(selectedRow);
+                } else {
+                    // Lidere com a exclusão mal-sucedida, se necessário
+                    JOptionPane.showMessageDialog(null, "Exclusão mal-sucedida.", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        } else {
+            // Exiba uma mensagem ao usuário informando que nenhuma linha foi selecionada.
+            JOptionPane.showMessageDialog(null, "Nenhuma linha selecionada.", "Aviso", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_deleteBTNActionPerformed
+
+    private void AtualizarBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtualizarBTNActionPerformed
+        atualizarTabela();
+    }//GEN-LAST:event_AtualizarBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -104,9 +174,10 @@ public class CadastroLivroForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton AtualizarBTN;
+    private javax.swing.JButton cadastroBTN;
+    private javax.swing.JButton deleteBTN;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable listaLivro;
     // End of variables declaration//GEN-END:variables
 }
