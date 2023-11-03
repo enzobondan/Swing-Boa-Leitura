@@ -10,6 +10,7 @@ administração interna. Desenvolvido com base em conceitos de programação ori
 <p align="center">
   <img src="https://github.com/enzobondan/Swing-Boa-Leitura/blob/main/img-readme/Tela-Inicial.png" alt="tela inicial do Boa Leitura">
 </p>
+
 ## ✔️ Tecnologias Utilizadas
 - ``Java``
 - ``MySQL``
