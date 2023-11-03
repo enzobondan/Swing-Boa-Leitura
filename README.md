@@ -7,6 +7,9 @@
 Esse sistema de gerenciamento é uma aplicação abrangente e eficiente criada para facilitar as operações de uma livraria fictícia, garantindo um controle preciso do estoque, atendimento ao cliente e 
 administração interna. Desenvolvido com base em conceitos de programação orientada a objetos, o sistema oferece o cadastro de clientes e livros nesta livraria.
 
+<p align="center">
+  <img src="https://github.com/enzobondan/Swing-Boa-Leitura/blob/main/img-readme/Tela-Inicial.png" alt="tela inicial do Boa Leitura">
+</p>
 ## ✔️ Tecnologias Utilizadas
 - ``Java``
 - ``MySQL``
